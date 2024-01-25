@@ -1,40 +1,33 @@
 import "../../styles/pages/_homepage.scss";
-// import FormNote from "../../components/Form/FormNote";
 import PostIt from "../../components/main-tools/PostIt";
 import FormNote from "../../components/Form/Formnote";
+import { HomePageProps } from "../../types/interface";
+import { useStateContext } from "../../utils/DispatcherContext";
 
-interface HomePageProps {
-  title: string;
-  itemToShow: boolean;
-}
-
-function HomePage({title, itemToShow}: HomePageProps) {
+function HomePage({ title }: HomePageProps) {
+  const { isFormVisible } = useStateContext();
 
   return (
     <>
-      <section className="note-form-section">
+      <section className='note-form-section'>
         <h2>{title}</h2>
-        {itemToShow
-          ?
-          <FormNote/>
-          : " "
-        }
+        {isFormVisible ? <FormNote /> : " "}
       </section>
-      <section className="postIt-section">
+      <section className='postIt-section'>
         <PostIt
-          title="Courses"
-          description=" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distincti
-          "
+          title='Courses'
+          description=' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distincti
+          '
         />
         <PostIt
-          title="Courses"
-          description=" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distincti
-          "
+          title='Courses'
+          description=' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distincti
+          '
         />
         <PostIt
-          title="Courses"
-          description=" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distincti
-          "
+          title='Courses'
+          description=' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distincti
+          '
         />
       </section>
     </>
