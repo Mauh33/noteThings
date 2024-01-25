@@ -1,0 +1,18 @@
+@import "../variables";
+@import "../mixins";
+@import "../placeholders";
+
+section {
+  width: 100%;
+  height: fit-content;
+}
+
+.note-form-section {
+  width: 100%;
+  margin: unset;
+}
+
+.postIt-section {
+  width: 100%;
+  @include flexbox($direction: column, $justify: space-evenly)
+}
